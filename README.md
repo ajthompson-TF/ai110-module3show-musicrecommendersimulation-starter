@@ -17,17 +17,7 @@ Replace this paragraph with your own summary of what your version does.
 
 ## How The System Works
 
-Explain your design in plain language.
-
-Some prompts to answer:
-
-- What features does each `Song` use in your system
-  - For example: genre, mood, energy, tempo
-- What information does your `UserProfile` store
-- How does your `Recommender` compute a score for each song
-- How do you choose which songs to recommend
-
-You can include a simple diagram or bullet list if helpful.
+`Song` will have features such as genre, mood, energy, and tempo. The `UserProfile` may keep track of a user's preferred genre, mood, energy, and tempo values. A `Recommender` will calculate which songs are closest to a user's preference based on the difference between the respective values, matches, and recommend the most appropiate songs using a point-based system. Matches for genre will weigh the most; therefore, this system might over-prioritize genre, ignoring great songs that match the user's mood.
 
 ---
 
@@ -68,18 +58,45 @@ You can add more tests in `tests/test_recommender.py`.
 
 ## Sample Recommendation Output
 
-Paste a sample of your recommender's output here as a text block so a reader can see what it produces:
-
 ```
-# e.g.:
-# User profile: genre=indie, mood=chill, energy=low
-# Recommendations:
-#   1. ...
-#   2. ...
-#   3. ...
-```
+==================================================
+Top Recommendations
+==================================================
 
-**Screenshot or video** *(optional)*: <!-- Insert a screenshot or demo video link here -->
+1. Sunrise City — Neon Echo (Score: 7.70)
+   - genre match (+3.0)
+   - mood match (+1.5)
+   - energy close to target (+0.88)
+   - valence close to target (+0.91)
+   - danceability close to target (+0.91)
+   - acousticness preference match (+0.5)
+
+2. Gym Hero — Max Pulse (Score: 6.07)
+   - genre match (+3.0)
+   - energy close to target (+0.77)
+   - valence close to target (+0.98)
+   - danceability close to target (+0.82)
+   - acousticness preference match (+0.5)
+
+3. Rooftop Lights — Indigo Parade (Score: 4.76)
+   - mood match (+1.5)
+   - energy close to target (+0.94)
+   - valence close to target (+0.94)
+   - danceability close to target (+0.88)
+   - acousticness preference match (+0.5)
+
+4. Golden Horizon — Marcus Vale (Score: 3.24)
+   - energy close to target (+0.9)
+   - valence close to target (+0.99)
+   - danceability close to target (+0.85)
+   - acousticness preference match (+0.5)
+
+5. Island Sway — Sunny Tide (Score: 3.20)
+   - energy close to target (+0.75)
+   - valence close to target (+0.95)
+   - danceability close to target (+1.0)
+   - acousticness preference match (+0.5) 
+   ```
 
 ---
 
